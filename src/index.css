@@ -1,0 +1,36 @@
+:root {
+
+  /* colors ref tailwind css  */
+  --clr-dark: #070a13;
+  --clr-light: #f1f5f9;
+  --clr-ligh2: #f8fafc;
+  --clr-red:#dc2626;
+  --clr-blue:#2563eb;
+
+  /* font size */
+
+  --size-base: 1rem;
+  --size-m: 2rem;
+  --size-l: 3rem;
+  --size-xl: 4rem;
+  --size-2xl: 5rem;
+  --size-3xl: 6rem;
+}
+
+* {
+  /* Default styles */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: calc(1em+0.5rem);
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--clr-ligh2);
+  background: linear-gradient(to top right, var(--clr-red) 3%, var(--clr-dark) 15%,var(--clr-dark) 85%, var(--clr-blue) 95%);
+}
