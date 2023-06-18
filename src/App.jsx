@@ -3,7 +3,7 @@ import ApiCall from './utils/apiCall';
 import './App.css'
 
 function App() {
-  const url = "movie/now_playing"; 
+  const url = "/movie/now_playing"; 
   
   useEffect(()=>{
     apiTesting();

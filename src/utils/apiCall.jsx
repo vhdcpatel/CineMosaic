@@ -2,7 +2,7 @@ import axios from "axios";
 
 const token = import.meta.env.VITE_APP_TMDB_TOKEN;
 
-const baseUrl = "https://api.themoviedb.org/3/";
+const baseUrl = "https://api.themoviedb.org/3";
 
 const headers= {
     accept: 'application/json',
@@ -18,8 +18,9 @@ const ApiCall= async (url,params) => {
     });
     return data;
   }
-  catch{
-
+  catch(err){
+    console.log(err);
+    return err;
   }
 }
 
