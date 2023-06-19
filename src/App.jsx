@@ -1,4 +1,4 @@
-import { Children, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ApiCall from './utils/apiCall';
 import { useDispatch, useSelector } from 'react-redux';
 import { getApiConfiguration } from './store/Slices/homeSlice';
@@ -43,13 +43,13 @@ function App() {
   },[]);
 
   const apiTesting = async () => {
-    const res = await ApiCall(Callurl);
+    // const res = await ApiCall(Callurl);
     setData(res);
     dispatch(getApiConfiguration(res));
     }
 
-  return (<RouterProvider router={router}>
-
+  return (
+  <RouterProvider router={router}>
   </RouterProvider>);
 }
 

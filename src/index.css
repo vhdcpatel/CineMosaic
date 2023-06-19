@@ -1,14 +1,32 @@
 :root {
+    
+  font-family: "Segoe UI",Tahoma, Verdana, Arial, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1;
+  /* line-height: calc(1em+0.5rem); */
+  font-weight: 500;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 
   /* colors ref tailwind css  */
-  --clr-dark: #070a13;
-  --clr-light: #f1f5f9;
-  --clr-ligh2: #f8fafc;
-  --clr-red:#dc2626;
-  --clr-blue:#2563eb;
+ 
+  --clr-black:#020617;
+  --clr-black-test: #04152d;
+  --clr-black2: #040916;
+  --clr-black3: #0f172a;
+  --clr-black-lighter: #192330;
+  --clr-black-light: #17212f;
+  --clr-pink: #ec4899;
+  --clr-orange: #f97316;
+  --clr-red:#b91c1c;
+  --clr-blue:#1e3a8a;
+  --clr-gradient: linear-gradient(98deg, var(--clr-orange) 0.99%, var(--clr-pink) 100%);
 
   /* font size */
-
   --size-base: 1rem;
   --size-m: 2rem;
   --size-l: 3rem;
@@ -22,11 +40,48 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  line-height: calc(1em+0.5rem);
-
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--clr-black);
+  height: 100vh;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: #0a2955;
+}
+
+.skeleton::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(25, 55, 99, 0) 0,
+    rgba(25, 55, 99, 0.2) 20%,
+    rgba(25, 55, 99, 0.5) 60%,
+    rgba(25, 55, 99, 0)
+  );
+  animation: shimmer 2s infinite;
+  content: "";
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
 }
 
