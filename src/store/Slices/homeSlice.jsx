@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// setting the intial state.
 const initialState = {
   url: {},
   genres: {},
