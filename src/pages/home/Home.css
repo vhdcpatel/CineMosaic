@@ -1,0 +1,6 @@
+.homePage {
+  color: var(--clr-ligh2);
+  font-size: 100px;
+  height: 100vh;
+  background: linear-gradient(to top right, var(--clr-red) 3%, var(--clr-dark) 15%,var(--clr-dark) 85%, var(--clr-blue) 95%);
+}
