@@ -3,6 +3,7 @@ import ApiCall from './utils/apiCall';
 import { useDispatch, useSelector } from 'react-redux';
 import { getApiConfiguration } from './store/Slices/homeSlice';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import useFetch from "./hooks/useFetch";
 import './App.css';
 
 // Importing pages and components.
@@ -12,7 +13,6 @@ import SearchResults from './pages/serachResults/SearchResults';
 import Explore from './pages/explore/Explore';
 import Error from './pages/error/Error';
 import RootLayout from './pages/Root/RootLayout';
-
 
 
 function App() {
@@ -30,23 +30,6 @@ function App() {
       ],
     },
   ]);
-
-  const [data2,setData] = useState('')
-
-  const Callurl = "/movie/now_playing"; 
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.home.url)
-  console.log(data);
-
-  useEffect(() => {
-     apiTesting();
-  },[]);
-
-  const apiTesting = async () => {
-    // const res = await ApiCall(Callurl);
-    setData(res);
-    dispatch(getApiConfiguration(res));
-    }
 
   return (
   <RouterProvider router={router}>
