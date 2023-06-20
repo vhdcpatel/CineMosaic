@@ -1,0 +1,7 @@
+.containWrapper {
+  width: 100%;
+  /* Special case for wide screens */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
