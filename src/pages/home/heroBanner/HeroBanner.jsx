@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import "./HeroBanner.css"
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import useFetch from '../../../hooks/useFetch';
-import { useSelector } from 'react-redux';
-
+import "./HeroBanner.css"
+import Wrapper from '../../../components/wrapper/Wrapper';
+import LazyLoadingImages from '../../../components/lazyLoadingImages/LazyLoadingImages';
 
 const HeroBanner = () => {
 
@@ -26,7 +27,11 @@ const HeroBanner = () => {
 
   return (
     <div className="heroBanner">
-      <div className="wrapper">
+      {!loading &&  <div className="backdrop-img">
+        <LazyLoadingImages src={background}></LazyLoadingImages>
+      </div>}
+      <div className="opacity-layer"></div>
+      <Wrapper>
         <div className="heroBannerContent">
           <span className="title">Welcome!</span>
           <span className="subTitle">
@@ -34,11 +39,18 @@ const HeroBanner = () => {
             your journey now.
           </span>
           <form className="searchInput" onSubmit={searchQueryHandler}>
-            <input type="text" placeholder="Search for a movie or tv show.." onChange={ (e) =>{setSearchQuery(e.target.value)}} />
+            <input
+              type="text"
+              placeholder="Search for a movie or tv show.."
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+              }}
+              />
             <button>Search</button>
           </form>
         </div>
-      </div>
+      </Wrapper>
+    
     </div>
   );
 }

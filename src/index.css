@@ -1,7 +1,7 @@
 :root {
     
   font-family: "Segoe UI",Tahoma, Verdana, Arial, sans-serif;
-  font-size: 1.25rem;
+  font-size: 16px;
   line-height: 1;
   /* line-height: calc(1em+0.5rem); */
   font-weight: 500;
@@ -37,9 +37,9 @@
 
 * {
   /* Default styles */
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {

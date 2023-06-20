@@ -1,3 +1,44 @@
-span {
-  display: block;
+.heroBanner {
+  width: 100%;
+  height: 80vh;
+  background-color: var(--clr-black);
+  display: flex;
+  align-items: center;
+  position: relative;
 }
+
+
+.backdrop-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  overflow: hidden;
+}
+.lazy-load-image-background {
+  width: 100%;
+  height: 100%;
+}
+
+.lazy-load-image-background img {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  object-position: center;
+}
+
+ .opacity-layer {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(180deg, rgba(4, 21, 45, 0) 0%, #04152d 79.17%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+  @media only screen and (min-width: 768px) {
+    .heroBanner {
+      height: 100vh;
+    }
+  }
