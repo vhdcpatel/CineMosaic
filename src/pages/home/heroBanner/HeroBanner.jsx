@@ -27,9 +27,11 @@ const HeroBanner = () => {
 
   return (
     <div className="heroBanner">
-      {!loading &&  <div className="backdrop-img">
-        <LazyLoadingImages src={background}></LazyLoadingImages>
-      </div>}
+      {!loading && (
+        <div className="backdrop-img">
+          <LazyLoadingImages src={background}></LazyLoadingImages>
+        </div>
+      )}
       <div className="opacity-layer"></div>
       <Wrapper>
         <div className="heroBannerContent">
@@ -38,19 +40,18 @@ const HeroBanner = () => {
             Discover and explore millions of movies, TV shows, and people. Start
             your journey now.
           </span>
-          <form className="searchInput" onSubmit={searchQueryHandler}>
-            <input
-              type="text"
-              placeholder="Search for a movie or tv show.."
-              onChange={(e) => {
-                setSearchQuery(e.target.value);
-              }}
+            <form className="searchInput" onSubmit={searchQueryHandler}>
+              <input
+                type="text"
+                placeholder="Search for a movie or tv show.."
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                }}
               />
-            <button>Search</button>
-          </form>
+              <button>Search</button>
+            </form>
         </div>
       </Wrapper>
-    
     </div>
   );
 }

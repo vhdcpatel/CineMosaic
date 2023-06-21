@@ -24,9 +24,13 @@
   --clr-black-light: #17212f;
   --clr-pink: #ec4899;
   --clr-orange: #f97316;
-  --clr-red:#b91c1c;
+  --clr-red1:#b91c1c;
   --clr-blue:#1e3a8a;
-  --clr-gradient: linear-gradient(98deg, var(--clr-orange) 0.99%, var(--clr-pink) 100%);
+  --clr-red-theme:#B91C1C;
+  --clr-red-theme2:#FF0000;
+  --clr-gradient: linear-gradient(90deg, var(--clr-red-theme2)  5%,var(--clr-red-theme) 95%);
+  /* --clr2-gradient: linear-gradient(98deg, var(--clr-orange) 1%, var(--clr-red) 99%); */
+
 
   /* font size */
   --size-base: 1rem;
