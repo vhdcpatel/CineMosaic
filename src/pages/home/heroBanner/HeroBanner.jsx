@@ -35,7 +35,7 @@ const HeroBanner = () => {
       <div className="opacity-layer"></div>
       <Wrapper>
         <div className="heroBannerContent">
-          <span className="title">Welcome!</span>
+          <span className="title">Welcome.</span>
           <span className="subTitle">
             Discover and explore millions of movies, TV shows, and people. Start
             your journey now.
