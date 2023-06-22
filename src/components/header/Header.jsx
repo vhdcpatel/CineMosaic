@@ -17,19 +17,47 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // to set the page again at top when we change page 
+  // Try to make it global move to main section.
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [location]);
+
+  const controlNavbar = ()=>{
+    if(window.scrollY > 150){
+      if(window.scrollY>lastScrollY){
+        setShow("hide");
+      }
+      else{
+        setShow("show");
+      }
+    }
+    else{
+        setShow("top");
+    }
+    SetLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll",controlNavbar);
+
+    return (()=>{
+      window.removeEventListener("scroll", controlNavbar);
+    })
+    
+  }, [lastScrollY]);
+
   const openSearch = () =>{
     setMobileMenu(false);
     setShowSearch(true);
-
   }
 
   const openMobileMenu = ()=>{
     setMobileMenu(true);
     setShowSearch(false);
-
   }
 
-   const searchQueryHandler = (e) => {
+  const searchQueryHandler = (e) => {
      e.preventDefault();
      navigate(`/search/${query}`);
      setTimeout(()=>{
@@ -41,7 +69,7 @@ const Header = () => {
   return (
     <header className={`header ${MobileMenu ? "mobileView" : ""}  ${show}`}>
       <Wrapper className="contentWrapper">
-        <div className="logo">
+        <div className="logo" onClick={()=>{navigate("/")}}>
           <img src={logo} alt="Logo png image" />
           CineMosic
         </div>
