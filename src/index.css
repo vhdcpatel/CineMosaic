@@ -18,6 +18,8 @@
   --clr-black-test: #04152d;
   --clr-black2: #040916;
   --clr-black3: #0f172a8b;
+  --clr-dark: rgba(12, 36, 141) 0%;
+  --clr-dark2: rgba(4, 21, 45, 0) 0%;
   --clr--light: #fff;
   /* --clr--light: #FFFAFA; */
   --clr-black-lighter: #192330;
