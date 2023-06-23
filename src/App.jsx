@@ -40,12 +40,13 @@ function App() {
     {
       path: "/",
       element: <RootLayout />,
-      errorElement: <Error />,
+      // errorElement: <Error />,
       children: [
         { index: true, element: <Home /> },
         { path: ":mediaType/:id", element: <Details /> },
         { path: "search/:query", element: <SearchResults /> },
         { path: "explore/:mediaType", element: <Explore /> },
+        { path: "*", element: <Error /> },
       ],
     },
   ]);
