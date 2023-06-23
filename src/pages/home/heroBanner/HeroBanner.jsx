@@ -37,8 +37,8 @@ const HeroBanner = () => {
         <div className="heroBannerContent">
           <span className="title">Welcome.</span>
           <span className="subTitle">
-            Discover and explore millions of movies, TV shows, and people. Start
-            your journey now.
+            Discover and explore millions of movies, TV shows, and people.<br/> 
+            Start your journey now.
           </span>
             <form className="searchInput" onSubmit={searchQueryHandler}>
               <input
