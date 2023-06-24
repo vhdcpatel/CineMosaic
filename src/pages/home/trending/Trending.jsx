@@ -13,8 +13,6 @@ const Trending = () => {
   
   const {data, loading} = useFetch(path);
 
-  console.log(data);
-
   const onTabChange = (tab)=>{
     setEndPoint(tab)
   }
