@@ -68,7 +68,13 @@ const Carousel = ({ data, isLoading,endpoint,title }) => {
                 ? url.poster + item.poster_path
                 : PosterFallback;
               return (
-                <div key={item.id} className="carouselItem" onClick={()=>{navigate(`/${item.media_type}/${item.id}`)}}>
+                <div
+                  key={item.id}
+                  className="carouselItem"
+                  onClick={() => {
+                    navigate(`/${item.media_type}/${item.id}`);
+                  }}
+                >
                   <div className="posterBlock">
                     <LazyLoadingImages src={posterUrl} />
                     {/* Need Update */}
@@ -78,6 +84,7 @@ const Carousel = ({ data, isLoading,endpoint,title }) => {
                   <div className="textBlock">
                     <span className="title">{item.title || item.name}</span>
                     <span className="date">
+                      {console.log(item.release_date || item.first_air_date)}
                       {dayjs(item.release_Date).format("MMM D, YYYY")}
                     </span>
                   </div>
