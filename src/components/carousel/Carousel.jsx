@@ -72,7 +72,7 @@ const Carousel = ({ data, isLoading,endpoint,title }) => {
                   key={item.id}
                   className="carouselItem"
                   onClick={() => {
-                    navigate(`/${item.media_type}/${item.id}`);
+                    navigate(`/${item.media_type || endpoint}/${item.id}`);
                   }}
                 >
                   <div className="posterBlock">
