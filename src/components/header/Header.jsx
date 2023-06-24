@@ -23,7 +23,7 @@ const Header = () => {
     window.scrollTo(0,0)
   }, [location]);
 
-  const controlNavbar = ()=>{
+  const controlNavbar = () => {
     if(window.scrollY > 150){
       if(window.scrollY>lastScrollY){
         setShow("hide");
