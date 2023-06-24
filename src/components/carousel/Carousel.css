@@ -1,0 +1,252 @@
+.carousel {
+  margin-bottom: 50px;
+  min-height: 30vh;
+}
+
+.carousel .containWrapper {
+  position: relative;
+}
+
+.carousel .containWrapper .carouselTitle {
+  font-size: 24px;
+  color: var(--clr--light);
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+.carousel .containWrapper .arrow  {
+  font-size: 30px;
+  color: var(--clr-black-lighter);
+  color: var(--clr-red-theme);
+  position: absolute;
+  top: 44%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  opacity: 0.5;
+  z-index: 2;
+  /* background-color: red; */
+  display: none;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.carousel .containWrapper .arrow:hover  {
+  opacity: 0.8;
+}
+
+.carousel .containWrapper .carouselLeftNav {
+  left: -5px;
+}
+
+.carousel .containWrapper .carouselRightNav {
+  right: -5px;
+}
+
+
+/* Loading Skeleton */
+.carousel .containWrapper .loadingSkeleton {
+  display: flex;
+  gap: 10px;
+  overflow-y: hidden;
+  margin-right: -20px;
+  margin-left: -20px;
+  padding: 0 20px;
+}
+
+.carousel .containWrapper .loadingSkeleton .skeletonItem {
+  width: 125px;
+  flex-shrink: 0;
+}
+.carousel .containWrapper .loadingSkeleton .skeletonItem .posterBlock {
+  border-radius: 12px;
+  width: 100%;
+  aspect-ratio: 1 / 1.5;
+  margin-bottom: 30px;
+}
+.carousel .containWrapper .loadingSkeleton .skeletonItem .textBlock {
+  display: flex;
+  flex-direction: column;
+}
+.carousel .containWrapper .loadingSkeleton .skeletonItem .textBlock .title {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+}
+.carousel .containWrapper .loadingSkeleton .skeletonItem .textBlock .date {
+  width: 75%;
+  height: 20px;
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: #0a2955;
+}
+
+.skeleton::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(25, 55, 99, 0) 0,
+    rgba(25, 55, 99, 0.2) 20%,
+    rgba(25, 55, 99, 0.5) 60%,
+    rgba(25, 55, 99, 0)
+  );
+  animation: shimmer 2s infinite;
+  content: "";
+}
+
+ @keyframes shimmer {
+        100% {
+            transform: translateX(100%);
+        }
+    }
+
+/* carouselItems */
+
+.carousel .containWrapper .carouselItems {
+  display: flex;
+  gap: 10px;
+  overflow-y: hidden;
+  margin-right: -20px;
+  margin-left: -20px;
+  padding: 0 20px;
+}
+
+.carousel .containWrapper .carouselItems .carouselItem {
+  width: 125px;
+  /* to fix size of each items main width*/
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.carousel .containWrapper .carouselItems .carouselItem .posterBlock {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.5;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.carousel  .carouselItems .carouselItem .posterBlock .lazy-load-image-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.carousel .containWrapper .carouselItems .carouselItem .posterBlock .lazy-load-image-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  /* display: none; */
+}
+
+/* Yet to set */
+.carousel  .carouselItems .carouselItem .posterBlock .circleRating {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 30px;
+  background-color: #fff;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.carousel  .carouselItems .carouselItem .posterBlock .genres {
+  display: none;
+  position: relative;
+}
+
+.carousel  .carouselItems .carouselItem .textBlock {
+  color: var(--clr--light);
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel .carouselItems .carouselItem .textBlock .title {
+  font-size: 16px;
+  margin-bottom: 10px;
+  line-height: 24px;
+
+  /* Some radom code check for error  */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+
+.carousel .carouselItems .carouselItem .textBlock .date {
+  font-size: 14px;
+  opacity: 0.5;
+}
+
+@media only screen and (min-width: 768px) {
+.carousel .containWrapper .arrow  {
+  display: block;
+  /* display: none; */
+  }
+
+  .carousel .containWrapper .loadingSkeleton {
+     gap: 20px;
+     overflow: hidden;
+     margin: 0;
+     padding: 0;
+  }
+
+  .carousel .containWrapper .loadingSkeleton .skeletonItem {
+  width: calc(25% - 15px);
+  }
+
+  .carousel .containWrapper .carouselItems {
+    gap: 20px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  .carousel .containWrapper .carouselItems .carouselItem {
+    width: calc(25% - 15px);
+  }
+
+  .carousel  .carouselItems .carouselItem .posterBlock .circleRating {
+  width: 50px;
+  height: 50px;
+  }
+
+  .carousel  .carouselItems .carouselItem .posterBlock .genres {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-end;
+  }
+
+.carousel .carouselItems .carouselItem .textBlock .title {
+  font-size: 20px;
+  }
+
+}
+
+  @media only screen and (min-width: 1024px) {
+    .carousel .containWrapper .carouselItems .carouselItem {
+    width: calc(20% - 16px);
+    }
+
+  .carousel .containWrapper .loadingSkeleton .skeletonItem {
+  width: calc(20% - 16px);
+    }
+}
