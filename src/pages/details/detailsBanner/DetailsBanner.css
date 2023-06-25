@@ -33,7 +33,7 @@
   background: linear-gradient(
       180deg,
       rgba(4, 21, 45, 0) 0%,
-      #04152d 79.17%
+      var(--clr-black) 79.17%
   );
   position: absolute;
   bottom: 0;
@@ -58,7 +58,7 @@
 }
 
 .detailsBanner .content .right {
-  color: var(--clr-light);
+  color: var(--clr--light);
 }
 
 .detailsBanner .content .right .title {
