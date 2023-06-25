@@ -24,7 +24,6 @@ const DetailsBanner = ({ video, crew }) => {
   const writers = crew?.filter(
     (listItem) => listItem.job == "Screenplay" || listItem.job == "Story" || listItem.job === "Writer"
   );
-  console.log(data?.created_by);
 
   const toHoursAndMinutes = (totalMinutes) => {
     const hours = Math.floor(totalMinutes / 60);
