@@ -132,18 +132,18 @@
   transition: all 0.5s ease-in-out;
   }
 
-  .detailsBanner .content .right .playbtn .text:hover {
+  .detailsBanner .content .right .playbtn:hover .text:hover {
     color: var(--clr-red-theme);  
   }
 
-  .detailsBanner .content .right .playbtn .triangle:hover {
+  .detailsBanner .content .right .playbtn:hover .triangle {
   stroke-dashoffset: 0;
   opacity: 1;
   stroke: var(--clr-red-theme);
   animation: trailorPlay 0.7s ease-in-out;
   }
 
-  .detailsBanner .content .right .playbtn .circle:hover {
+  .detailsBanner .content .right .playbtn:hover .circle {
   stroke-dashoffset: 0;
   stroke: var(--clr-red-theme);
   }
