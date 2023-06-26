@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import Wrapper from "../../../components/wrapper/Wrapper";
 import useFetch from "../../../hooks/useFetch";
 import Genres from "../../../components/genres/Genres";
-import CircleRating from "../../../components/circleRating/circleRating";
+import CircleRating from "../../../components/circleRating/CircleRating";
 import LazyLoadingImages from "../../../components/lazyLoadingImages/LazyLoadingImages";
 import PosterFallback from "../../../assets/no-poster.png";
 import PlayIcon from "./PlayIcon";
