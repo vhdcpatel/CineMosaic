@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import LazyLoadingImages from "../lazyLoadingImages/LazyLoadingImages";
-import CircleRating from "../circleRating/circleRating";
+import CircleRating from "../circleRating/CircleRating";
 import Genres from "../genres/Genres";
 import PosterFallback from "../../assets/no-poster.png";
 
