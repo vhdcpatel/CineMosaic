@@ -4,6 +4,7 @@
 }
 
 .carousel .containWrapper {
+  display: block;
   position: relative;
 }
 

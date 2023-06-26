@@ -15,8 +15,6 @@ import "./DetailsBanner.css";
 
 const DetailsBanner = ({ video, crew }) => {
 
-  console.log(video);
-
   const [show,setShow] = useState(false);
   const [videoId, setVideoId] = useState(null);
 
