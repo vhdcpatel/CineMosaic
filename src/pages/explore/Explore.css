@@ -1,0 +1,55 @@
+.Text1 {
+  min-height: 100vh;
+  display: grid;
+  place-items:center;
+  color: #fff;
+  font-size: 3rem;
+}
+
+.explorePage {
+    min-height: 700px;
+    padding-top: 100px;
+}
+
+.explorePage .resultNotFound {
+        font-size: 24px;
+        color: var(--black-light);
+}
+
+.explorePage .pageHeader {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        flex-direction: column;
+       
+    }
+
+.explorePage .pageTitle {
+        font-size: 24px;
+        line-height: 34px;
+        color: white;
+        margin-bottom: 20px;
+        
+}
+
+.explorePage .filters {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+    
+
+
+@media only screen and (min-width: 768px) {
+   .explorePage .pageHeader {
+   flex-direction: row;
+   }
+
+   .explorePage .pageTitle {
+    margin-bottom: 0;
+    }
+
+    .explorePage .filters {
+    flex-direction: row;
+    }
+}
