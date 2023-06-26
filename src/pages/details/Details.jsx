@@ -17,8 +17,7 @@ const Details = () => {
   const { data: creditsData, loading: creditsDataLoading } = useFetch(
     `/${mediaType}/${id}/credits`
   );
-  
-
+   
 
   return (
     <Fragment>
