@@ -1,20 +1,11 @@
 import React from 'react'
+import "./Error.css"
 
 const Error = () => {
   // console.log("inside error page");
-  const inlineStyles = {
-    color: "white",
-    minHeight: "80vh",
-    fontSize: "40px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    // Add more CSS properties as needed
-  };
+ 
 
-  return (
-    <div style={inlineStyles}>Page not found</div>
-  )
+  return <div className="main-text">Sorry, We can't find page you are looking for 🔎.</div>;
 }
 
 export default Error

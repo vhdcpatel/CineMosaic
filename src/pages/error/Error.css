@@ -1,0 +1,8 @@
+.main-text {
+  min-height: 100vh;
+  display: grid;
+  place-items:center;
+  font-size: 3rem;
+  color: #fff;
+  padding: 2vh 3vw;
+}
