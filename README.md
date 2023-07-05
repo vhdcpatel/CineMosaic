@@ -67,8 +67,6 @@ Vraj - [vrajhpatel21@gmail.com](mailto:vrajhpatel21@gmail.com)
 
 Project Link: [vhdcpatel/CineMosaic](https://github.com/vhdcpatel/CineMosaic)
 
-Feel free to update and customize the README file according to your project's specific details.
-
 ## Project Structure
 ```
 CineMosaic.
