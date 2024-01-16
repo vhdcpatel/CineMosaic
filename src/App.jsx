@@ -74,10 +74,11 @@ function App() {
   ]);
 
   return (
-    <SpeedInsights>
+    <>
       <RouterProvider router={router}>
       </RouterProvider>
-    </SpeedInsights>
+      <SpeedInsights />
+    </>
   );
 }
 
