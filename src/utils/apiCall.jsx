@@ -2,7 +2,6 @@ import axios from "axios";
 
 // const token = import.meta.env.VITE_APP_TMDB_TOKEN;
 const token = import.meta.env.VITE_APP_TMDB_TOKEN;
-console.log("vhdc", token);
 const baseUrl = "https://api.themoviedb.org/3";
 
 const headers = {
@@ -20,7 +19,6 @@ const ApiCall = async (url, params) => {
     return data;
   }
   catch (err) {
-    console.log(err);
     return err;
   }
 }
