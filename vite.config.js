@@ -10,7 +10,7 @@ export default defineConfig(() => {
   return {
     plugins: [react()],
     define: {
-      __APP_ENV__: process.env.VITE_APP_TMDB_TOKEN,
+      VITE_APP_TMDB_TOKEN: process.env.VITE_APP_TMDB_TOKEN,
     },
   };
 });
