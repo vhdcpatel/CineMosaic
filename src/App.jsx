@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getApiConfiguration, getGenres } from "./store/Slices/homeSlice";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import './App.css';
 
 // Importing pages and components.
@@ -18,13 +19,13 @@ import Genres from './components/genres/Genres';
 function App() {
   const dispatch = useDispatch();
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchApiConfiguration();
     genresCall();
-  },[]);
+  }, []);
 
-  const fetchApiConfiguration = async ()=>{
-    try{
+  const fetchApiConfiguration = async () => {
+    try {
       const responce = await ApiCall("/configuration")
       const url = {
         backdrop: responce.images.secure_base_url + "original",
@@ -33,29 +34,29 @@ function App() {
       };
       dispatch(getApiConfiguration(url))
     }
-    catch(error){
+    catch (error) {
       console.log("Someting went wrong !");
     }
-  } 
+  }
 
   const genresCall = async () => {
     let promises = [];
-    let endPoints = ["tv","movie"];
+    let endPoints = ["tv", "movie"];
     let allGenres = {};
 
-    endPoints.forEach((url)=>{
+    endPoints.forEach((url) => {
       promises.push(ApiCall(`/genre/${url}/list`));
     });
 
     // Wait for responce for both of api call;
     const data = await Promise.all(promises);
-        
-    data.map(({genres}) => {
-    genres.map((item) => (allGenres[item.id]=item.name));
+
+    data.map(({ genres }) => {
+      genres.map((item) => (allGenres[item.id] = item.name));
     });
 
     dispatch(getGenres(allGenres));
-  } 
+  }
 
   const router = createBrowserRouter([
     {
@@ -73,8 +74,11 @@ function App() {
   ]);
 
   return (
-  <RouterProvider router={router}>
-  </RouterProvider>);
+    <SpeedInsights>
+      <RouterProvider router={router}>
+      </RouterProvider>
+    </SpeedInsights>
+  );
 }
 
 export default App
