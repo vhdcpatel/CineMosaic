@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getApiConfiguration, getGenres } from "./store/Slices/homeSlice";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import './App.css';
 
 // Importing pages and components.
@@ -74,11 +73,8 @@ function App() {
   ]);
 
   return (
-    <>
-      <RouterProvider router={router}>
-      </RouterProvider>
-      <SpeedInsights />
-    </>
+    <RouterProvider router={router}>
+    </RouterProvider>
   );
 }
 
