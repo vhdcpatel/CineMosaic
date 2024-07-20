@@ -1,19 +1,11 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { getApiConfiguration, getGenres } from "./store/Slices/homeSlice";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {  BrowserRouter as Router } from "react-router-dom";
 import './App.css';
 
-// Importing pages and components.
-import Home from './pages/home/Home';
-import Details from './pages/details/Details';
-import SearchResults from './pages/serachResults/SearchResults';
-import Explore from './pages/explore/Explore';
-import Error from './pages/error/Error';
-import RootLayout from './pages/Root/RootLayout';
 import ApiCall from './utils/apiCall';
-
-import Genres from './components/genres/Genres';
+import AppRoutes from './routes/AppRoutes';
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +26,7 @@ function App() {
       dispatch(getApiConfiguration(url))
     }
     catch (error) {
+      console.log(error);
       console.log("Someting went wrong !");
     }
   }
@@ -49,6 +42,7 @@ function App() {
 
     // Wait for responce for both of api call;
     const data = await Promise.all(promises);
+    console.log(data);
 
     data.map(({ genres }) => {
       genres.map((item) => (allGenres[item.id] = item.name));
@@ -57,24 +51,10 @@ function App() {
     dispatch(getGenres(allGenres));
   }
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <RootLayout />,
-      // errorElement: <Error />,
-      children: [
-        { index: true, element: <Home /> },
-        { path: ":mediaType/:id", element: <Details /> },
-        { path: "search/:query", element: <SearchResults /> },
-        { path: "explore/:mediaType", element: <Explore /> },
-        { path: "*", element: <Error /> },
-      ],
-    },
-  ]);
-
   return (
-    <RouterProvider router={router}>
-    </RouterProvider>
+    <Router>
+      <AppRoutes/>
+    </Router>
   );
 }
 
