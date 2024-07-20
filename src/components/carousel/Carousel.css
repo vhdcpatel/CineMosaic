@@ -204,7 +204,9 @@
   }
 
   .carousel .containWrapper .loadingSkeleton {
-     gap: 20px;
+    /* Fix just for the desktop screens. */
+    width: 100%; 
+    gap: 20px;
      overflow: hidden;
      margin: 0;
      padding: 0;
