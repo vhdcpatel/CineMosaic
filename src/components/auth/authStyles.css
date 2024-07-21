@@ -1,0 +1,80 @@
+.auth-form-ctn {
+  color: #ffffff;
+  width: 100%;
+  margin: auto;
+  text-align: left;
+}
+
+.auth-form-ctn h2 {
+  text-align: center;
+  margin-bottom: 1.25rem;
+  font-size: 1.5rem;
+}
+
+.auth-form-ctn label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.auth-form-ctn input {
+  width: 100%;
+  padding: 0.625rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 0.3125rem;
+  font-size: 1rem;
+}
+
+.auth-form-ctn button {
+  width: 100%;
+  padding: 0.625rem;
+  margin-top: 0.625rem;
+  border: none;
+  border-radius: 0.3125rem;
+  background-color: var(--clr-red-theme);
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auth-form-ctn button:hover {
+  background-color: var(--clr-red-theme2);
+}
+
+.auth-form-ctn .toggle-link {
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.auth-form-ctn .errorMsg {
+  color: var(--clr-red-theme);
+  margin-top: 0.625rem;
+  font-size: 0.75rem;
+}
+.auth-form-ctn .statusMsg {
+  color: var(--clr--light);
+  margin-top: 0.625rem;
+  font-size: 0.75rem;
+}
+
+
+
+@media (max-width: 48rem) {
+  .auth-form-ctn {
+    padding: 0;
+  }
+
+  .auth-form-ctn h2 {
+    font-size: 1.25rem;
+  }
+
+  .auth-form-ctn button {
+    font-size: 0.875rem;
+  }
+}

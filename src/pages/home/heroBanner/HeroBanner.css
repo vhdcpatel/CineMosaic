@@ -67,7 +67,7 @@
 
    
     .searchInput input {
-      width: calc(100%-100px);
+      width: calc(100% - 100px);
       height: 50px;
       background-color: var(--clr--light);
       outline: 0;

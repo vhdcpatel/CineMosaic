@@ -15,8 +15,12 @@ const HeroBanner = () => {
   const url = useSelector((state) => state.home.url);
 
   useEffect(()=>{
-    const backGroundLink = url.backdrop + data?.results[Math.floor(Math.random()*21)]?.backdrop_path;
-    setBackground(backGroundLink);
+    try{
+      const backGroundLink = url?.backdrop + data?.results[Math.floor(Math.random()*21)]?.backdrop_path;
+      setBackground(backGroundLink);
+    }catch(error){
+      console.log(error);
+    }
   },[data])
 
   const  navigate = useNavigate();
