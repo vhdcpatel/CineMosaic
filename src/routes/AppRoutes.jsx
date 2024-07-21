@@ -6,10 +6,12 @@ import Details from '../pages/details/Details'
 import SearchResults from '../pages/serachResults/SearchResults'
 import Explore from '../pages/explore/Explore'
 import Error from '../pages/error/Error'
+import AuthPage from '../pages/auth/AuthPage'
 
 const AppRoutes = () => {
   return (
     <Routes>
+      <Route path="/auth" element={<AuthPage />} />
       <Route path="/" element={<RootLayout/>}>
         <Route index element={<Home/>} />
         <Route path=":mediaType/:id" element={<Details />} />

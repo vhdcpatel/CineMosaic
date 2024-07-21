@@ -218,7 +218,7 @@
 
   .carousel .containWrapper .carouselItems {
     gap: 20px;
-    overflow: hidden;
+    overflow: scroll;
     margin: 0;
     padding: 0;
   }

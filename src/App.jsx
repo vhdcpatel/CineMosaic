@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getApiConfiguration, getGenres } from "./store/Slices/homeSlice";
-import {  BrowserRouter as Router } from "react-router-dom";
+import {  BrowserRouter } from "react-router-dom";
 import './App.css';
 
 import ApiCall from './utils/apiCall';
@@ -72,10 +72,10 @@ function App() {
   }
 
   return (
-    <Router>
+    <BrowserRouter>
       <VPNDialog isOpen={vpnDialogBoxVisible} handleClose={handleDialogClose} />
       <AppRoutes/>
-    </Router>
+    </BrowserRouter>
   );
 }
 
